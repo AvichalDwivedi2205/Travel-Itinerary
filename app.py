@@ -5,7 +5,9 @@ import os
 from datetime import date
 
 load_dotenv()
-genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
+
+# Configuration for both local and Streamlit Cloud
+genai.configure(api_key=os.getenv("GEMINI_API_KEY") or st.secrets.get("GEMINI_API_KEY"))
 
 def generate_response(prompt):
     model = genai.GenerativeModel('gemini-pro')
