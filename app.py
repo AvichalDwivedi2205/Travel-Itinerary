@@ -36,11 +36,13 @@ def main():
             "Low Budget", "Low To Moderate", 
             "Moderate", "Moderate To High", "Luxury"
         ])
+        number_of_people = st.number_input("Number of People", min_value=1, max_value=30, value=1)
         purpose = st.text_input("Trip Purpose (e.g. Friends Getaway, Solo Adventure, Couples Retreat)")
         activities = st.text_input("Activities You Want to Try (e.g., Scuba Diving, Museum Hopping)")
         dietary = st.text_input("Dietary Preferences (e.g., Vegan, Gluten-Free)")
         mobility = st.selectbox("Walking Tolerance", ["Low", "Moderate", "High"])
         accommodation = st.text_input("Accommodation Preferences (e.g., Hotels, AirBnb, Resort, Hostels, Cabin, etc.)")
+        place_of_accomodation = st.text_input("Place Of Accomodation (e.g. Central Location, Near A Specific Location, Surrounded by Nature, etc., etc.)")
 
     if st.button("✨ Generate My Perfect Itinerary"):
         # Format dates
@@ -51,18 +53,20 @@ def main():
         base_prompt = f"""
         Create a {duration}-day itinerary for {destination} ({start_fmt} to {end_fmt}) with:
         - Budget: {budget}
+        - Number of People: {number_of_people}
         - Travel Purpose: {purpose}
         - Desired Activities: {activities if activities else 'General Exploration'}
         - Dietary Needs: {dietary if dietary else 'No restrictions'}
         - Mobility Level: {mobility}
         - Accommodation: {accommodation if accommodation else 'Not specified'}
+        - Place Of Accomodation: {place_of_accomodation if place_of_accomodation else 'Not Specified'}
         
         Include for each day:
-        🌅 Morning, 🌇 Afternoon, and 🌃 Evening activities
-        🍽️ 2-3 dining options with dietary accommodations
-        🚗 Transportation tips between locations
-        💰 Cost estimates for each major activity
-        🕶️ Local insider tips and hidden gems
+        Morning, Afternoon, and Evening activities
+        2-3 dining options with dietary accommodations
+        Transportation options between locations
+        Cost estimates for each activity mentioned above
+        Local insider tips and hidden gems
         """
 
         refined_prompt = f"""
