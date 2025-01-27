@@ -40,8 +40,10 @@ def main():
         purpose = st.text_input("Trip Purpose (e.g. Friends Getaway, Solo Adventure, Couples Retreat)")
         activities = st.text_input("Activities You Want to Try (e.g., Scuba Diving, Museum Hopping)")
         dietary = st.text_input("Dietary Preferences (e.g., Vegan, Gluten-Free)")
+        allergies = st.text_input("Food Allergies (e.g., Peanuts, Shellfish)")
         mobility = st.selectbox("Walking Tolerance", ["Low", "Moderate", "High"])
         accommodation = st.text_input("Accommodation Preferences (e.g., Hotels, AirBnb, Resort, Hostels, Cabin, etc.)")
+        specific_features = st.text_input("Specific Features In Accomdation (e.g., Pool, Gym, Kitchen, etc.)")
         place_of_accomodation = st.text_input("Place Of Accomodation (e.g. Central Location, Near A Specific Location, Surrounded by Nature, etc., etc.)")
 
     if st.button("✨ Generate My Perfect Itinerary"):
@@ -57,8 +59,10 @@ def main():
         - Travel Purpose: {purpose}
         - Desired Activities: {activities if activities else 'General Exploration'}
         - Dietary Needs: {dietary if dietary else 'No restrictions'}
+        - Food Allergies: {allergies if allergies else 'None'}
         - Mobility Level: {mobility}
         - Accommodation: {accommodation if accommodation else 'Not specified'}
+        - Specific Features: {specific_features if specific_features else 'Not specified'}
         - Place Of Accomodation: {place_of_accomodation if place_of_accomodation else 'Not Specified'}
         
         Include for each day:
