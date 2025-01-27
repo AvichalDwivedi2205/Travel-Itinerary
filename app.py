@@ -22,7 +22,7 @@ def main():
         destination = st.text_input("Destination")
         col1, col2 = st.columns(2)
         with col1:
-            start_date = st.date_input("Start Date", value=date.today())
+            start_date = st.date_input("Start Date", value=date.today(), min_value=date.today())
         with col2:
             end_date = st.date_input("End Date", 
                                    min_value=start_date,
