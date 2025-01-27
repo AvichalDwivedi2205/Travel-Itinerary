@@ -78,9 +78,10 @@ def main():
         Structure this itinerary:
         1. Group nearby attractions to minimize travel time
         2. Balance popular spots with unique local experiences
-        3. Include time buffers for meals and transit
+        3. Include time buffers for meals and transit and meals should follow dietary restrictions
         4. Add safety tips and cultural notes
         5. Format with clear daily headings and emojis
+        6. Give me answer only in english
         """
 
         with st.spinner("🧭 Planning your adventure..."):
