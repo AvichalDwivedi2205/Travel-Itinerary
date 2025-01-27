@@ -82,6 +82,7 @@ def main():
         4. Add safety tips and cultural notes
         5. Format with clear daily headings and emojis
         6. Give me answer only in english
+        7. Provide a summary at the end with total cost and time spent on each activity
         """
 
         with st.spinner("🧭 Planning your adventure..."):
