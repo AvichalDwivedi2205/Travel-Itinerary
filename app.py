@@ -37,7 +37,7 @@ def main():
             "Moderate", "Moderate To High", "Luxury"
         ])
         number_of_people = st.number_input("Number of People", min_value=1, max_value=30, value=1)
-        purpose = st.text_input("Trip Purpose (e.g. Friends Getaway, Solo Adventure, Couples Retreat)")
+        purpose = st.text_input("Trip Purpose (e.g. Friends Getaway, Solo Adventure, Couples Retreat)", value="General Trip")
         activities = st.text_input("Activities You Want to Try (e.g., Scuba Diving, Hiking, Museum Hopping)")
         dietary = st.text_input("Dietary Preferences (e.g., Vegan, Gluten-Free)")
         allergies = st.text_input("Food Allergies (e.g., Peanuts, Shellfish)")
