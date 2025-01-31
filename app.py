@@ -46,7 +46,7 @@ def main():
         specific_features = st.text_input("Specific Features In Accomdation (e.g., Pool, Gym, Kitchen, etc.)")
         place_of_accomodation = st.text_input("Place Of Accomodation (e.g. Central Location, Near A Specific Location, Surrounded by Nature, etc., etc.)")
 
-    if st.button("✨ Generate My Perfect Itinerary"):
+    if st.button("✨ Generate My Perfect Itinerary") and destination:
         # Format dates
         start_fmt = start_date.strftime("%b %d")
         end_fmt = end_date.strftime("%b %d")
